@@ -1,0 +1,27 @@
+version: 1.0.{build}
+configuration: Release
+
+init:
+- if "%APPVEYOR_REPO_NAME%" == "JeremyAnsel/XwaSnmConverter" if "%APPVEYOR_REPO_BRANCH%"=="master" if not defined APPVEYOR_PULL_REQUEST_NUMBER set DEPLOY=True
+
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: 1.0.0
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+
+before_build:
+- nuget restore XwaSnmConverter\XwaSnmConverter.sln
+
+build:
+  project: XwaSnmConverter\XwaSnmConverter.sln
+  verbosity: minimal
+
+after_build:
+- XwaSnmConverter\build-dist.cmd
+
+artifacts:
+- path: XwaSnmConverter\dist
+  name: XwaSnmConverter-$(APPVEYOR_BUILD_VERSION)
+  type: zip
