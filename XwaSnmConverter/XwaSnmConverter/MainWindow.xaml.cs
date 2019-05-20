@@ -67,27 +67,27 @@ namespace XwaSnmConverter
             if (dialog.ShowDialog(this) == true)
             {
                 this.saSnmFileName.Text = dialog.FileName;
-            }
-            else
-            {
-                this.saSnmFileName.Text = null;
+                this.saAviFileName.Text = System.IO.Path.ChangeExtension(dialog.FileName, "avi");
             }
         }
 
         private void saOpenAvi_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(this.saSnmFileName.Text))
+            {
+                return;
+            }
+
             var dialog = new SaveFileDialog();
             dialog.AddExtension = true;
             dialog.DefaultExt = "avi";
             dialog.Filter = "avi files (*.avi)|*.avi";
+            dialog.InitialDirectory = System.IO.Path.GetDirectoryName(this.saSnmFileName.Text);
+            dialog.FileName = System.IO.Path.ChangeExtension(System.IO.Path.GetFileName(this.saSnmFileName.Text), "avi");
 
             if (dialog.ShowDialog(this) == true)
             {
                 this.saAviFileName.Text = dialog.FileName;
-            }
-            else
-            {
-                this.saAviFileName.Text = null;
             }
         }
 
@@ -127,27 +127,27 @@ namespace XwaSnmConverter
             if (dialog.ShowDialog(this) == true)
             {
                 this.asAviFileName.Text = dialog.FileName;
-            }
-            else
-            {
-                this.asAviFileName.Text = null;
+                this.asSnmFileName.Text = System.IO.Path.ChangeExtension(dialog.FileName, "snm");
             }
         }
 
         private void asOpenSnm_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(this.asAviFileName.Text))
+            {
+                return;
+            }
+
             var dialog = new SaveFileDialog();
             dialog.AddExtension = true;
             dialog.DefaultExt = "snm";
             dialog.Filter = "snm files (*.snm, *.znm)|*.snm;*.znm";
+            dialog.InitialDirectory = System.IO.Path.GetDirectoryName(this.asAviFileName.Text);
+            dialog.FileName = System.IO.Path.ChangeExtension(System.IO.Path.GetFileName(this.asAviFileName.Text), "snm");
 
             if (dialog.ShowDialog(this) == true)
             {
                 this.asSnmFileName.Text = dialog.FileName;
-            }
-            else
-            {
-                this.asSnmFileName.Text = null;
             }
         }
 
