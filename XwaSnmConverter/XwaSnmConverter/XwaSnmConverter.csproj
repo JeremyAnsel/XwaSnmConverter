@@ -39,7 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="JeremyAnsel.Xwa.Snm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\JeremyAnsel.Xwa.Snm.1.0.2\lib\net45\JeremyAnsel.Xwa.Snm.dll</HintPath>
+      <HintPath>..\packages\JeremyAnsel.Xwa.Snm.1.0.3\lib\net45\JeremyAnsel.Xwa.Snm.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SharpAvi, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
