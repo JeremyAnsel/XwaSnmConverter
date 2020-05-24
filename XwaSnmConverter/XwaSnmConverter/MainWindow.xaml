@@ -6,10 +6,53 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:XwaSnmConverter"
         mc:Ignorable="d"
-        Title="Xwa Snm Converter" Height="350" Width="525"
+        Title="Xwa Snm Converter"
+        Height="600" Width="525"
         UseLayoutRounding="True">
     <xctk:BusyIndicator x:Name="BusyIndicator">
         <UniformGrid Columns="1">
+            <GroupBox Header="SNM -> MP4">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <StackPanel>
+                            <DockPanel>
+                                <Label DockPanel.Dock="Left" Content="SNM file: " Width="70"/>
+                                <TextBox x:Name="smSnmFileName" IsReadOnly="True" TextWrapping="Wrap"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label DockPanel.Dock="Left" Content="MP4 file: " Width="70"/>
+                                <TextBox x:Name="smMp4FileName" IsReadOnly="True" TextWrapping="Wrap"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </DockPanel>
+                    <UniformGrid Columns="3">
+                        <Button x:Name="smOpenSnm" Content="Open SNM file" Width="120" Height="30" Click="smOpenSnm_Click"/>
+                        <Button x:Name="smOpenMp4" Content="Open MP4 file" Width="120" Height="30" Click="smOpenMp4_Click"/>
+                        <Button x:Name="smConvert" Content="Convert SNM -> MP4" Width="150" Height="30" Click="smConvert_Click"/>
+                    </UniformGrid>
+                </DockPanel>
+            </GroupBox>
+            <GroupBox Header="MF -> SNM">
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <StackPanel>
+                            <DockPanel>
+                                <Label DockPanel.Dock="Left" Content="MF file: " Width="70"/>
+                                <TextBox x:Name="msMfFileName" IsReadOnly="True" TextWrapping="Wrap"/>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label DockPanel.Dock="Left" Content="SNM file: " Width="70"/>
+                                <TextBox x:Name="msSnmFileName" IsReadOnly="True" TextWrapping="Wrap"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </DockPanel>
+                    <UniformGrid Columns="3">
+                        <Button x:Name="msOpenMf" Content="Open MF file" Width="120" Height="30" Click="msOpenMf_Click"/>
+                        <Button x:Name="msOpenSnm" Content="Open SNM file" Width="120" Height="30" Click="msOpenSnm_Click"/>
+                        <Button x:Name="msConvert" Content="Convert MF -> SNM" Width="150" Height="30" Click="msConvert_Click"/>
+                    </UniformGrid>
+                </DockPanel>
+            </GroupBox>
             <GroupBox Header="SNM -> AVI">
                 <DockPanel>
                     <DockPanel DockPanel.Dock="Top">
