@@ -142,8 +142,8 @@ namespace XwaSnmConverter
             dialog.AddExtension = true;
             dialog.DefaultExt = "snm";
             dialog.Filter = "snm files (*.snm, *.znm)|*.snm;*.znm";
-            dialog.InitialDirectory = System.IO.Path.GetDirectoryName(this.asAviFileName.Text);
-            dialog.FileName = System.IO.Path.ChangeExtension(System.IO.Path.GetFileName(this.asAviFileName.Text), "snm");
+            dialog.InitialDirectory = System.IO.Path.GetDirectoryName(this.msMfFileName.Text);
+            dialog.FileName = System.IO.Path.ChangeExtension(System.IO.Path.GetFileName(this.msMfFileName.Text), "snm");
 
             if (dialog.ShowDialog(this) == true)
             {
