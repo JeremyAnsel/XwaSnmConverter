@@ -28,7 +28,10 @@
                     <UniformGrid Columns="3">
                         <Button x:Name="smOpenSnm" Content="Open SNM file" Width="120" Height="30" Click="smOpenSnm_Click"/>
                         <Button x:Name="smOpenMp4" Content="Open MP4 file" Width="120" Height="30" Click="smOpenMp4_Click"/>
-                        <Button x:Name="smConvert" Content="Convert SNM -> MP4" Width="150" Height="30" Click="smConvert_Click"/>
+                        <DockPanel>
+                            <CheckBox x:Name="smAddSubtitles" DockPanel.Dock="Bottom" Content="Add subtitles" />
+                            <Button x:Name="smConvert" Content="Convert SNM -> MP4" Width="150" Height="30" Click="smConvert_Click"/>
+                        </DockPanel>
                     </UniformGrid>
                 </DockPanel>
             </GroupBox>

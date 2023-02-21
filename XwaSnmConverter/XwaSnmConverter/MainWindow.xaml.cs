@@ -95,6 +95,7 @@ namespace XwaSnmConverter
         {
             string snm = this.smSnmFileName.Text;
             string mp4 = this.smMp4FileName.Text;
+            bool addSubtitles = this.smAddSubtitles.IsChecked == true;
 
             if (string.IsNullOrEmpty(snm) || string.IsNullOrEmpty(mp4))
             {
@@ -107,7 +108,7 @@ namespace XwaSnmConverter
                 {
                     JeremyAnsel.Xwa.Snm.SnmFile
                         .FromFile(snm)
-                        .SaveAsMp4(mp4);
+                        .SaveAsMp4(mp4, addSubtitles);
 
                     disp(() => Xceed.Wpf.Toolkit.MessageBox.Show(this, string.Concat(mp4, " created."), this.Title, MessageBoxButton.OK));
                 }
